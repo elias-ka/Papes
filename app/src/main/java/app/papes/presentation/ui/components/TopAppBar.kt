@@ -1,4 +1,4 @@
-package app.papes.ui.components
+package app.papes.presentation.ui.components
 
 import androidx.annotation.StringRes
 import androidx.compose.material3.CenterAlignedTopAppBar

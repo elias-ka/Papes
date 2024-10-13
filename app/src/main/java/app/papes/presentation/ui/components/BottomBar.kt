@@ -1,4 +1,4 @@
-package app.papes.ui.components
+package app.papes.presentation.ui.components
 
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
@@ -9,7 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
-import app.papes.navigation.TopLevelDestination
+import app.papes.presentation.navigation.TopLevelDestination
 
 @Composable
 fun PapesBottomBar(
@@ -20,7 +20,7 @@ fun PapesBottomBar(
 ) {
     NavigationBar(modifier = modifier) {
         destinations.forEach { destination ->
-            val selected = currentDestination.isTopLevelDestinationInHierarchy(destination) ?: false
+            val selected = currentDestination.isTopLevelDestinationInHierarchy(destination) == true
             NavigationBarItem(
                 selected = selected,
                 onClick = { onNavigateToDestination(destination) },

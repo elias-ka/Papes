@@ -1,4 +1,4 @@
-package app.papes.ui
+package app.papes.presentation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Stable
@@ -9,9 +9,9 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navOptions
-import app.papes.feature.home.homeNavigationRoute
-import app.papes.feature.home.navigateToHome
-import app.papes.navigation.TopLevelDestination
+import app.papes.presentation.home.homeNavigationRoute
+import app.papes.presentation.home.navigateToHome
+import app.papes.presentation.navigation.TopLevelDestination
 
 @Composable
 fun rememberPapesAppState(

@@ -1,13 +1,13 @@
-package app.papes
+package app.papes.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import app.papes.ui.PapesApp
-import app.papes.ui.rememberPapesAppState
-import app.papes.ui.theme.PapesTheme
+import app.papes.presentation.ui.theme.PapesTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

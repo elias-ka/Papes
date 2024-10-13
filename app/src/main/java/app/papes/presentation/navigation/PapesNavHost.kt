@@ -1,11 +1,11 @@
-package app.papes.navigation
+package app.papes.presentation.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
-import app.papes.feature.home.homeNavigationRoute
-import app.papes.feature.home.homeScreen
+import app.papes.presentation.home.homeNavigationRoute
+import app.papes.presentation.home.homeScreen
 
 @Composable
 fun PapesNavHost(

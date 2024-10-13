@@ -1,4 +1,4 @@
-package app.papes.navigation
+package app.papes.presentation.navigation
 
 import androidx.annotation.StringRes
 import androidx.compose.material.icons.Icons

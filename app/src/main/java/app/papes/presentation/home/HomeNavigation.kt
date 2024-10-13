@@ -1,10 +1,11 @@
-package app.papes.feature.home
+package app.papes.presentation.home
 
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
 
+// FIXME: consider using type-safe navigation
 const val homeNavigationRoute = "home_route"
 
 fun NavController.navigateToHome(

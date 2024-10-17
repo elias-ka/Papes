@@ -170,6 +170,7 @@ fun AuthorCreditRow(
             fontSize = 12.sp,
             text = buildAnnotatedString {
                 append(stringResource(R.string.photo_by))
+                append(" ")
                 withLink(
                     LinkAnnotation.Url(
                         authorUrl,
@@ -178,6 +179,7 @@ fun AuthorCreditRow(
                 ) {
                     append(author)
                 }
+                append(" ")
                 append(stringResource(R.string.on_pexels))
             })
     }
@@ -225,6 +227,10 @@ fun ActionButton(
         Text(text)
     }
 }
+
+// FIXME: This wallpaper setting logic doesn't belong here,
+//        but it doesn't belong in viewmodel either so I don't know where it should go.
+//        Maybe have like an event channel and bubble the events up to the MainActivity?
 
 fun filenameFromPhoto(photo: Photo): String {
     return String.format("%s_%s.jpg", photo.photographer.replace(" ", "_"), photo.id)

@@ -1,6 +1,5 @@
 package app.papes.presentation
 
-import android.annotation.SuppressLint
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Stable
 import androidx.compose.runtime.remember
@@ -12,6 +11,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navOptions
 import app.papes.presentation.home.navigateToHome
+import app.papes.presentation.info.navigateToInfo
 import app.papes.presentation.navigation.TopLevelDestination
 
 @Composable
@@ -33,7 +33,7 @@ class PapesAppState(
     val topLevelDestinations = TopLevelDestination.entries
 
     val currentTopLevelDestination: TopLevelDestination?
-        @SuppressLint("RestrictedApi") @Composable get() {
+        @Composable get() {
             return topLevelDestinations.firstOrNull {
                 currentDestination?.hasRoute(route = it.route) == true
             }
@@ -50,6 +50,7 @@ class PapesAppState(
         }
         when (destination) {
             TopLevelDestination.HOME -> navController.navigateToHome(topLevelNavOptions)
+            TopLevelDestination.INFO -> navController.navigateToInfo(topLevelNavOptions)
         }
     }
 }

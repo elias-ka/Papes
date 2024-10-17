@@ -8,6 +8,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import app.papes.presentation.home.HomeRoute
 import app.papes.presentation.home.homeScreen
+import app.papes.presentation.info.infoScreen
 import app.papes.presentation.photo_detail.navigateToPhotoDetail
 import app.papes.presentation.photo_detail.photoDetailScreen
 
@@ -47,5 +48,6 @@ fun PapesNavHost(
     ) {
         homeScreen(onPhotoClick = navController::navigateToPhotoDetail)
         photoDetailScreen()
+        infoScreen()
     }
 }

@@ -1,10 +1,23 @@
 <resources>
-    <string name="app_name">Papes</string>
+    <string name="app_name" translatable="false">Papes</string>
+
+    <!-- Top level destinations -->
     <string name="destination_home_label">Home</string>
-    <string name="photo_by">"Photo by "</string>
-    <string name="on_pexels">" on Pexels"</string>
+    <string name="destination_info_label">Info</string>
+    <string name="destination_info_title">Info</string>
+
+    <!-- Image detail screen -->
+    <string name="photo_by">Photo by</string>
+    <string name="on_pexels">on Pexels</string>
     <string name="image_save">Save</string>
     <string name="image_set_as_wallpaper">Set</string>
     <string name="image_set_as_wallpaper_intent_title">Set as:</string>
     <string name="image_saved">Saved to gallery</string>
+
+    <!-- Info screen -->
+    <string name="info_app_description">This is an example wallpaper app developed as a part of an Android development course at the Oulu University of Applied Sciences.</string>
+    <string name="info_github_title">Source Code on GitHub</string>
+    <string name="info_github_url" translatable="false">https://github.com/elias-ka/Papes</string>
+    <string name="info_pexels_credit_title">Powered By Pexels</string>
+    <string name="info_pexels_url" translatable="false">https://www.pexels.com/</string>
 </resources>

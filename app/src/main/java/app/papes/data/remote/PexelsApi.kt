@@ -8,7 +8,7 @@ interface PexelsApi {
     @GET("curated")
     suspend fun getCuratedPhotos(
         @Query("page") page: Int = 1,
-        @Query("per_page") perPage: Int = 80
+        @Query("per_page") perPage: Int = 40
     ): CuratedPhotosResponse
 
     companion object {

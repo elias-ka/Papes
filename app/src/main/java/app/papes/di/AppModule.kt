@@ -70,9 +70,4 @@ object AppModule {
             client(httpClient)
         }.build().create<PexelsApi>(PexelsApi::class.java)
     }
-
-    @Provides
-    @Singleton
-    fun provideCuratedPhotosPagingSource(pexelsApi: PexelsApi) =
-        CuratedPhotosPagingSource(pexelsApi)
 }

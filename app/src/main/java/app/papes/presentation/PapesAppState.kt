@@ -1,15 +1,16 @@
 package app.papes.presentation
 
+import android.annotation.SuppressLint
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Stable
 import androidx.compose.runtime.remember
 import androidx.navigation.NavDestination
+import androidx.navigation.NavDestination.Companion.hasRoute
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navOptions
-import app.papes.presentation.home.homeNavigationRoute
 import app.papes.presentation.home.navigateToHome
 import app.papes.presentation.navigation.TopLevelDestination
 
@@ -29,13 +30,15 @@ class PapesAppState(
     val currentDestination: NavDestination?
         @Composable get() = navController.currentBackStackEntryAsState().value?.destination
 
+    val topLevelDestinations = TopLevelDestination.entries
+
     val currentTopLevelDestination: TopLevelDestination?
-        @Composable get() = when (currentDestination?.route) {
-            homeNavigationRoute -> TopLevelDestination.HOME
-            else -> null
+        @SuppressLint("RestrictedApi") @Composable get() {
+            return topLevelDestinations.firstOrNull {
+                currentDestination?.hasRoute(route = it.route) == true
+            }
         }
 
-    val topLevelDestinations = TopLevelDestination.entries
 
     fun navigateToTopLevelDestination(destination: TopLevelDestination) {
         val topLevelNavOptions = navOptions {

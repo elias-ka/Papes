@@ -19,29 +19,31 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.paging.LoadState
+import androidx.paging.PagingData
 import androidx.paging.compose.LazyPagingItems
 import androidx.paging.compose.collectAsLazyPagingItems
 import androidx.paging.compose.itemKey
 import app.papes.domain.Photo
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
+import kotlinx.coroutines.flow.Flow
 
 @Composable
 fun HomeScreen(
+    onPhotoClick: (Photo) -> Unit,
     homeViewModel: HomeViewModel = hiltViewModel(),
-    onPhotoClick: (Photo) -> Unit = {},
     modifier: Modifier = Modifier
 ) {
-    val curatedPhotos = homeViewModel.curatedPhotosFlow.collectAsLazyPagingItems()
-    HomeScreenContent(curatedPhotos, onPhotoClick,  modifier)
+    HomeScreenContent(homeViewModel.curatedPhotosFlow, onPhotoClick,  modifier)
 }
 
 @Composable
 fun HomeScreenContent(
-    photos: LazyPagingItems<Photo>,
+    photosFlow: Flow<PagingData<Photo>>,
     onPhotoClick: (Photo) -> Unit = {},
     modifier: Modifier = Modifier
 ) {
+    val photos = photosFlow.collectAsLazyPagingItems()
     val context = LocalContext.current
     LaunchedEffect(key1 = photos.loadState) {
         if (photos.loadState.refresh is LoadState.Error) {

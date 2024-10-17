@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Papes</string>
     <string name="destination_home_label">Home</string>
+    <string name="photo_by">"Photo by "</string>
+    <string name="on_pexels">" on Pexels"</string>
+    <string name="image_save">Save</string>
+    <string name="image_set_as_wallpaper">Set</string>
+    <string name="image_set_as_wallpaper_intent_title">Set as:</string>
+    <string name="image_saved">Saved to gallery</string>
 </resources>

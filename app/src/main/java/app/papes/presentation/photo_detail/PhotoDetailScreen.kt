@@ -79,7 +79,7 @@ fun PhotoDetailScreen(
         )
     ) {
         PinchToZoomImage(
-            imageUrl = photo.large,
+            imageUrl = photo.original,
             contentDescription = photo.photographer,
             onSuccess = { state ->
                 bitmap = state.result.drawable.toBitmap()

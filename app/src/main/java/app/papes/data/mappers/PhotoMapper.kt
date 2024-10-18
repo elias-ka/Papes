@@ -10,6 +10,6 @@ fun PexelsPhoto.toPhoto() =
         photographer = photographer,
         photographerUrl = photographerUrl,
         thumbnail = src.medium,
-        large = src.large,
+        original = src.original,
         alt = alt
     )

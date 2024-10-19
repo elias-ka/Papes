@@ -23,3 +23,10 @@ line to it:
 ```
 PEXELS_API_KEY="your_api_key_here"
 ```
+
+## References
+I used the following resources to keep up with the latest Android development practices:
+
+- [Google's Now in Android reference app](https://developer.android.com/series/now-in-android)
+- [Philipp Lackner's YouTube channel](https://www.youtube.com/PhilippLackner)
+- [Guide to app architecture](https://developer.android.com/topic/architecture)
